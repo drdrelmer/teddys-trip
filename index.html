@@ -38,15 +38,43 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#fff9e6 0
 .nav-btn{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;color:#888;cursor:pointer;padding:6px 14px;border-radius:10px;-webkit-user-select:none}
 .nav-btn .nicon{font-size:22px}
 .nav-btn.active{color:#1a6abf}
-/* API Key screen */
-#key-sc{padding:10px 0}
-.key-card{background:white;border-radius:20px;border:3px solid #c8dff5;padding:22px 20px;margin-bottom:18px}
-.key-title{font-size:18px;font-weight:900;color:#1a6abf;margin-bottom:8px}
-.key-desc{font-size:14px;font-weight:700;color:#555;line-height:1.6;margin-bottom:14px}
-.key-input{width:100%;padding:14px 16px;border:3px solid #c8dff5;border-radius:14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:#2c3e50;outline:none;margin-bottom:12px}
-.key-input:focus{border-color:#1a6abf}
-.key-link{color:#1a6abf;font-weight:800;text-decoration:none}
-.key-err{color:#e74c3c;font-size:13px;font-weight:800;margin-bottom:10px;display:none}
+
+/* ── PARENT SETUP SCREEN ─────────────────────────────────────── */
+#setup-sc{padding:10px 0}
+.setup-card{background:white;border-radius:20px;border:3px solid #c8dff5;padding:24px 20px;margin-bottom:16px}
+.setup-icon{font-size:48px;text-align:center;display:block;margin-bottom:12px}
+.setup-title{font-size:20px;font-weight:900;color:#1a6abf;margin-bottom:8px;text-align:center}
+.setup-desc{font-size:14px;font-weight:700;color:#555;line-height:1.7;margin-bottom:18px}
+.setup-label{font-size:13px;font-weight:900;color:#1a6abf;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.setup-input{width:100%;padding:14px 16px;border:3px solid #c8dff5;border-radius:14px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:#2c3e50;outline:none;margin-bottom:14px;-webkit-appearance:none}
+.setup-input:focus{border-color:#1a6abf}
+.setup-err{color:#e74c3c;font-size:13px;font-weight:800;margin-bottom:12px;display:none;text-align:center}
+.setup-hint{font-size:12px;color:#aaa;font-weight:700;text-align:center;margin-top:10px;line-height:1.6}
+.setup-link{color:#1a6abf;font-weight:800}
+.setup-steps{background:#f0f7ff;border-radius:14px;padding:14px 16px;margin-bottom:16px}
+.setup-steps p{font-size:13px;font-weight:700;color:#555;line-height:1.8}
+.setup-steps b{color:#1a6abf}
+
+/* ── PARENT SETTINGS MODAL ───────────────────────────────────── */
+#settings-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:300;align-items:center;justify-content:center;padding:20px}
+.settings-box{background:white;border-radius:24px;padding:24px 20px;width:100%;max-width:440px}
+.settings-title{font-size:20px;font-weight:900;color:#1a6abf;text-align:center;margin-bottom:6px}
+.settings-sub{font-size:13px;color:#888;font-weight:700;text-align:center;margin-bottom:18px}
+.settings-row{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.settings-lbl{font-size:13px;font-weight:900;color:#1a6abf;text-transform:uppercase;letter-spacing:.5px}
+.settings-input{width:100%;padding:13px 15px;border:3px solid #c8dff5;border-radius:14px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#2c3e50;outline:none;-webkit-appearance:none}
+.settings-input:focus{border-color:#1a6abf}
+.settings-err{color:#e74c3c;font-size:13px;font-weight:800;display:none;text-align:center;margin-bottom:8px}
+.settings-ok{color:#2ecc71;font-size:13px;font-weight:800;display:none;text-align:center;margin-bottom:8px}
+.sbtn-row{display:flex;gap:10px}
+.sbtn{flex:1;padding:13px;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;cursor:pointer;-webkit-user-select:none}
+.sbtn.save{background:#e67e22;color:white}
+.sbtn.cancel{background:#eee;color:#555}
+
+/* ── PARENT GEAR LINK (welcome screen) ──────────────────────── */
+.parent-link{display:block;text-align:center;font-size:12px;color:#ccc;font-weight:700;margin-top:24px;cursor:pointer;-webkit-user-select:none;background:none;border:none;font-family:'Nunito',sans-serif;width:100%}
+.parent-link:active{color:#999}
+
 /* Monster */
 #ms-sc{text-align:center}
 .mnem{font-size:80px;display:block;margin:10px 0;animation:shk .5s infinite alternate}
@@ -59,6 +87,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#fff9e6 0
 .sb:active{transform:scale(0.97)}
 .vm{display:none;font-size:19px;font-weight:900;color:#2ecc71;margin:14px 0;animation:pop .4s ease}
 @keyframes pop{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
+
 /* Story */
 #st-sc{text-align:center}
 .sbox{background:white;border-radius:18px;border:3px solid #c8dff5;padding:16px 18px;margin-bottom:14px;text-align:left;min-height:60px}
@@ -72,6 +101,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#fff9e6 0
 .vbtn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:#eee;color:#555;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;cursor:pointer;-webkit-user-select:none}
 .rb{padding:12px 24px;background:#2ecc71;color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;cursor:pointer;-webkit-user-select:none}
 .rb:active{transform:scale(0.97)}
+
 /* Voice Modal */
 #voice-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:center;justify-content:center;padding:20px}
 .vmodal-box{background:white;border-radius:24px;padding:22px 18px;width:100%;max-width:480px;max-height:80vh;display:flex;flex-direction:column;gap:14px}
@@ -84,6 +114,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#fff9e6 0
 .vname{font-size:14px;font-weight:800}
 .vlang{font-size:12px;opacity:0.7}
 .vclose{padding:12px;background:#e67e22;color:white;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;cursor:pointer}
+
 /* Music */
 #mu-sc{padding-bottom:20px}
 .mu-title{text-align:center;font-size:22px;font-weight:900;color:#1a6abf;margin-bottom:4px}
@@ -101,26 +132,36 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#fff9e6 0
 <body>
 <div id="app">
 
-<!-- API KEY SETUP -->
-<div id="key-sc" class="sc active">
-  <div class="tb"><h1>Let's Take A Trip! ✈️</h1><div class="sub">One quick setup step!</div></div>
-  <div class="key-card">
-    <div class="key-title">🔑 Enter Your API Key</div>
-    <div class="key-desc">
-      This app uses Anthropic's AI to write Teddy's stories. You'll need a free API key.<br><br>
-      👉 Get one free at <a class="key-link" href="https://console.anthropic.com" target="_blank">console.anthropic.com</a><br><br>
-      Your key is saved on this device only and never shared.
+<!-- ── PARENT SETUP (first launch only) ───────────────────── -->
+<div id="setup-sc" class="sc">
+  <div class="tb"><h1>Let's Take A Trip! ✈️</h1><div class="sub">Parent Setup — one time only!</div></div>
+  <div class="setup-card">
+    <span class="setup-icon">🔐</span>
+    <div class="setup-title">Parent Setup</div>
+    <div class="setup-desc">
+      Hi! This is a one-time setup. After this, Teddy will go straight to the app — he'll never see this screen again.
+      <br><br>
+      This app uses Anthropic's AI to write Teddy's personalised stories. You'll need a free API key to make it work.
     </div>
-    <input class="key-input" id="api-key-input" type="password" placeholder="sk-ant-..." autocomplete="off" autocorrect="off" autocapitalize="off">
-    <div class="key-err" id="key-err">❌ That key didn't work. Please check and try again.</div>
-    <button class="nb" onclick="saveKey()" style="max-width:100%">Save & Start! 🚀</button>
-  </div>
-  <div style="text-align:center;font-size:13px;color:#aaa;font-weight:700;padding:0 10px">
-    Already have a key saved? <button onclick="skipKey()" style="background:none;border:none;color:#1a6abf;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer">Skip →</button>
+    <div class="setup-steps">
+      <p>
+        <b>How to get your free key:</b><br>
+        1. Go to <a class="setup-link" href="https://console.anthropic.com" target="_blank">console.anthropic.com</a><br>
+        2. Create a free account<br>
+        3. Click "API Keys" → "Create Key"<br>
+        4. Copy the key and paste it below<br>
+        5. We also recommend setting a $5/month spending limit under "Billing" for peace of mind
+      </p>
+    </div>
+    <div class="setup-label">Your Anthropic API Key</div>
+    <input class="setup-input" id="setup-key-input" type="password" placeholder="sk-ant-..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <div class="setup-err" id="setup-err">❌ Please enter a valid key starting with sk-ant-</div>
+    <button class="nb" onclick="saveSetup()" style="max-width:100%">Save & Start Teddy's App! 🚀</button>
+    <div class="setup-hint">Your key is stored privately on this device only and is never shared with anyone.</div>
   </div>
 </div>
 
-<!-- WELCOME -->
+<!-- ── WELCOME ─────────────────────────────────────────────── -->
 <div id="w-sc" class="sc">
   <div class="tb"><h1>Let's Take A Trip! ✈️</h1><div class="sub">Make your choices and hear your story!</div></div>
   <div style="text-align:center;padding:20px 0">
@@ -128,14 +169,17 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#fff9e6 0
     <p style="font-size:18px;font-weight:800;color:#2c3e50;margin-bottom:24px;line-height:1.6">Hi Teddy!<br>Let's plan an amazing trip together!</p>
     <button class="nb" onclick="go(1)">Let's Go! 🚀</button>
   </div>
+  <button class="parent-link" onclick="openSettings()">⚙️ Parent Settings</button>
 </div>
 
+<!-- ── CHOICE SCREENS ──────────────────────────────────────── -->
 <div id="s1" class="sc"><div class="dots" id="d1"></div><div class="ql">🚌 How are you traveling?</div><div class="hint">Pick one!</div><div class="grid" id="tg"></div><button class="nb" id="n1" onclick="go(2)" disabled>Next ➡️</button></div>
 <div id="s2" class="sc"><div class="dots" id="d2"></div><div class="ql">📍 Where are you going?</div><div class="hint">Pick one!</div><div class="grid" id="dg"></div><button class="nb" id="n2" onclick="go(3)" disabled>Next ➡️</button></div>
 <div id="s3" class="sc"><div class="dots" id="d3"></div><div class="ql">👫 Who's coming with you?</div><div class="hint">Pick as many as you want!</div><div class="grid" id="cg"></div><button class="nb" id="n3" onclick="go(4)" disabled>Next ➡️</button></div>
 <div id="s4" class="sc"><div class="dots" id="d4"></div><div class="ql">🎒 What are you packing?</div><div class="hint">Pick as many as you want!</div><div class="grid" id="pg"></div><button class="nb" id="n4" onclick="go(5)" disabled>Next ➡️</button></div>
 <div id="s5" class="sc"><div class="dots" id="d5"></div><div class="ql">🎉 What will you do there?</div><div class="hint">Pick one!</div><div class="grid" id="ag"></div><button class="nb" id="n5" onclick="genStory()" disabled>Tell My Story! 📖</button></div>
 
+<!-- ── MONSTER ─────────────────────────────────────────────── -->
 <div id="ms-sc" class="sc">
   <div class="tb"><h1>Uh oh! 😱</h1></div>
   <span class="mnem" id="mnem">👾</span>
@@ -146,6 +190,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#fff9e6 0
   <button class="nb" id="amb" onclick="gotoStory()" style="display:none;margin-top:10px">Read My Story! 📖</button>
 </div>
 
+<!-- ── STORY ───────────────────────────────────────────────── -->
 <div id="st-sc" class="sc">
   <div class="tb"><h1>Teddy's Trip Story! 📖</h1></div>
   <div class="sbox" id="sb-t"><div class="sl">🚌 Getting There</div><p class="ld">Loading your story...</p></div>
@@ -160,6 +205,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#fff9e6 0
   </div>
 </div>
 
+<!-- ── MUSIC ───────────────────────────────────────────────── -->
 <div id="mu-sc" class="sc">
   <div class="mu-title">🎵 Teddy's Songs!</div>
   <div class="mu-sub">Tap a song to listen on YouTube</div>
@@ -167,13 +213,33 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(160deg,#fff9e6 0
   <div class="song-grid" id="song-grid"></div>
 </div>
 
-</div><!-- end app -->
+</div><!-- end #app -->
 
+<!-- ── NAV BAR ─────────────────────────────────────────────── -->
 <div id="nav">
   <button class="nav-btn active" id="nav-trip" onclick="showTrip()"><span class="nicon">✈️</span>Trip</button>
   <button class="nav-btn" id="nav-music" onclick="showMusic()"><span class="nicon">🎵</span>Music</button>
 </div>
 
+<!-- ── PARENT SETTINGS MODAL ──────────────────────────────── -->
+<div id="settings-modal">
+  <div class="settings-box">
+    <div class="settings-title">⚙️ Parent Settings</div>
+    <div class="settings-sub">Changes are saved instantly to this device.</div>
+    <div class="settings-row">
+      <div class="settings-lbl">Anthropic API Key</div>
+      <input class="settings-input" id="settings-key-input" type="password" placeholder="sk-ant-..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    </div>
+    <div class="settings-err" id="settings-err">❌ Key must start with sk-ant-</div>
+    <div class="settings-ok" id="settings-ok">✅ Key saved successfully!</div>
+    <div class="sbtn-row">
+      <button class="sbtn cancel" onclick="closeSettings()">Cancel</button>
+      <button class="sbtn save" onclick="saveSettings()">Save Key</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── VOICE PICKER MODAL ──────────────────────────────────── -->
 <div id="voice-modal">
   <div class="vmodal-box">
     <div class="vmodal-title">🎙️ Choose a Voice</div>
@@ -211,23 +277,38 @@ const SONGS=[
 
 let ch={t:null,d:null,c:[],p:[],a:null},mon=null,story={t:"",d:"",c:"",p:"",a:""},isSpeaking=false,selectedVoice=null;
 
-// ── API KEY ──────────────────────────────────────────────────────────────────
-function getKey(){return sessionStorage.getItem("trip_api_key")||localStorage.getItem("trip_api_key")||"";}
-function saveKey(){
-  const k=document.getElementById("api-key-input").value.trim();
-  if(!k||!k.startsWith("sk-")){document.getElementById("key-err").style.display="block";return;}
+// ── API KEY ───────────────────────────────────────────────────
+function getKey(){return localStorage.getItem("trip_api_key")||"";}
+function hasKey(){const k=getKey();return k&&k.startsWith("sk-");}
+
+function saveSetup(){
+  const k=document.getElementById("setup-key-input").value.trim();
+  if(!k||!k.startsWith("sk-")){document.getElementById("setup-err").style.display="block";return;}
   localStorage.setItem("trip_api_key",k);
-  sessionStorage.setItem("trip_api_key",k);
-  document.getElementById("key-err").style.display="none";
-  showScreen("w-sc");
-}
-function skipKey(){
-  const k=getKey();
-  if(k)showScreen("w-sc");
-  else{document.getElementById("key-err").textContent="⚠️ No saved key found. Please enter one.";document.getElementById("key-err").style.display="block";}
+  showScreen("w-sc");showNav(false);
 }
 
-// ── VOICE ────────────────────────────────────────────────────────────────────
+function openSettings(){
+  document.getElementById("settings-key-input").value=getKey();
+  document.getElementById("settings-err").style.display="none";
+  document.getElementById("settings-ok").style.display="none";
+  document.getElementById("settings-modal").style.display="flex";
+}
+function closeSettings(){document.getElementById("settings-modal").style.display="none";}
+function saveSettings(){
+  const k=document.getElementById("settings-key-input").value.trim();
+  if(!k||!k.startsWith("sk-")){
+    document.getElementById("settings-err").style.display="block";
+    document.getElementById("settings-ok").style.display="none";
+    return;
+  }
+  localStorage.setItem("trip_api_key",k);
+  document.getElementById("settings-err").style.display="none";
+  document.getElementById("settings-ok").style.display="block";
+  setTimeout(()=>closeSettings(),1200);
+}
+
+// ── VOICE ─────────────────────────────────────────────────────
 const PREFERRED=["Samantha","Karen","Daniel","Moira","Tessa","Evan","Alex","Microsoft Aria","Microsoft Jenny","Google US English","Google UK English Female"];
 function loadVoices(){return new Promise(r=>{const v=speechSynthesis.getVoices();if(v.length>0){r(v);return;}speechSynthesis.onvoiceschanged=()=>r(speechSynthesis.getVoices());});}
 async function pickBestVoice(){
@@ -265,12 +346,12 @@ async function openVoicePicker(){
 }
 function closeVoicePicker(){document.getElementById("voice-modal").style.display="none";speechSynthesis.cancel();}
 
-// ── NAVIGATION ───────────────────────────────────────────────────────────────
+// ── NAVIGATION ────────────────────────────────────────────────
 function showScreen(id){document.querySelectorAll(".sc").forEach(s=>s.classList.remove("active"));document.getElementById(id).classList.add("active");}
 function showNav(v){document.getElementById("nav").className=v?"visible":"";}
 function dots(n,cur){let h="";for(let i=1;i<=5;i++){let c=i<cur?"done":(i===cur?"active":"");h+='<div class="dot '+c+'"></div>';}return h;}
 
-// ── GRID BUILDER ─────────────────────────────────────────────────────────────
+// ── GRID ──────────────────────────────────────────────────────
 function mkBtn(item,key,multi,gridId){
   const b=document.createElement("button");b.className="cb"+(multi?" ms":"");
   b.innerHTML=item.ph&&PH[item.ph]?'<img class="ph" src="'+PH[item.ph]+'" alt="'+item.l+'"><span>'+item.l+'</span>':'<span class="em">'+( item.e||"😊")+'</span><span>'+item.l+'</span>';
@@ -280,7 +361,7 @@ function mkBtn(item,key,multi,gridId){
       const idx=ch[key].indexOf(item.l);
       if(idx>-1){ch[key].splice(idx,1);b.classList.remove("sel");}else{ch[key].push(item.l);b.classList.add("sel");}
       document.getElementById({c:"n3",p:"n4"}[key]).disabled=ch[key].length===0;
-    } else {
+    }else{
       document.getElementById(gridId).querySelectorAll(".cb").forEach(x=>x.classList.remove("sel"));
       b.classList.add("sel");ch[key]=item.l;document.getElementById({t:"n1",d:"n2",a:"n5"}[key]).disabled=false;
     }
@@ -313,7 +394,7 @@ function buildSongs(){
   });
 }
 
-// ── STORY FLOW ────────────────────────────────────────────────────────────────
+// ── STORY FLOW ────────────────────────────────────────────────
 function genStory(){if(Math.random()<0.6)showMonster();else gotoStory();}
 
 function showMonster(){
@@ -343,13 +424,17 @@ function gotoStory(){showScreen("st-sc");fetchStory();}
 
 async function fetchStory(){
   const apiKey=getKey();
-  if(!apiKey){["sb-t","sb-d","sb-c","sb-p","sb-a"].forEach(id=>{const p=document.getElementById(id).querySelector("p");p.textContent="No API key found. Tap New Trip to add one.";p.classList.remove("ld");});return;}
-
+  if(!apiKey){
+    ["sb-t","sb-d","sb-c","sb-p","sb-a"].forEach(id=>{
+      const p=document.getElementById(id).querySelector("p");
+      p.textContent="No API key found. Tap ⚙️ Parent Settings on the home screen.";p.classList.remove("ld");
+    });
+    return;
+  }
   const cl=ch.c.length>0?(ch.c.length===1?ch.c[0]:ch.c.slice(0,-1).join(", ")+" and "+ch.c.slice(-1)):"nobody else";
   const pl=ch.p.length>0?(ch.p.length===1?ch.p[0]:ch.p.slice(0,-1).join(", ")+" and "+ch.p.slice(-1)):"nothing special";
   const mb=mon?"Along the way, a "+mon.name+" appeared but Teddy bravely scared it away!":"";
   const prompt="Write a fun, warm trip story for a boy named Teddy. Use simple, joyful language for elementary school children. Write exactly 5 short paragraphs of 2-3 sentences each. Use Teddy's name and make it personal and exciting!\n\nSection 1 (Transportation): Teddy travels by "+ch.t+"\nSection 2 (Destination): Teddy goes to "+ch.d+"\nSection 3 (Companions): Teddy travels with "+cl+"\nSection 4 (Packing): Teddy packed "+pl+"\nSection 5 (Activity): At the destination, Teddy "+ch.a+". "+mb+"\n\nFormat: exactly 5 paragraphs separated by '|||'. No headings or labels.";
-
   try{
     const r=await fetch("https://api.anthropic.com/v1/messages",{
       method:"POST",
@@ -361,10 +446,7 @@ async function fetchStory(){
       },
       body:JSON.stringify({model:"claude-haiku-4-5",max_tokens:1000,messages:[{role:"user",content:prompt}]})
     });
-    if(!r.ok){
-      const err=await r.json().catch(()=>({error:{message:"Unknown error"}}));
-      throw new Error(err.error?.message||"API error "+r.status);
-    }
+    if(!r.ok){const err=await r.json().catch(()=>({error:{message:"Unknown error"}}));throw new Error(err.error?.message||"API error "+r.status);}
     const data=await r.json();
     const txt=data.content.map(c=>c.text||"").join("");
     const parts=txt.split("|||");
@@ -377,7 +459,7 @@ async function fetchStory(){
     console.error("Story error:",e);
     ["sb-t","sb-d","sb-c","sb-p","sb-a"].forEach(id=>{
       const p=document.getElementById(id).querySelector("p");
-      p.textContent="Oops! Could not load story. Check your API key and internet connection.";p.classList.remove("ld");
+      p.textContent="Could not load story. Check your internet connection and try again.";p.classList.remove("ld");
     });
   }
 }
@@ -390,9 +472,10 @@ function newTrip(){
   showScreen("w-sc");showNav(false);
 }
 
-// Start
+// ── STARTUP ───────────────────────────────────────────────────
 (async()=>{
-  if(getKey())showScreen("w-sc");
+  // If key already saved, go straight to welcome. Otherwise show setup.
+  if(hasKey()){showScreen("w-sc");}else{showScreen("setup-sc");}
   selectedVoice=await pickBestVoice();
 })();
 </script>
